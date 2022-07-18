@@ -1,2 +1,8 @@
 @use 'base';
 @use 'layout';
+
+@use 'components/header';
+@use 'components/map';
+@use 'components/search-bar';
+@use 'components/search-results';
+@use 'components/footer';
