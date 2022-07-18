@@ -1,58 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="styles/css/main.css">
-  
-  <title>Frontend Mentor | IP Address Tracker</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles/css/main.css" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | IP Address Tracker</title>
 
-  <header>
-    <h1>
-      IP Address Tracker
-    </h1>
-  </header>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>IP Address Tracker</h1>
+    </header>
 
-  <input type="text" placeholder="Search for any IP address or domain">
+    <div class="search-bar">
+      <input type="text" placeholder="Search for any IP address or domain" />
 
-  <main>
-    <div class="search-results-container">
-      <div class="search-result-section">
-        <h5>IP Address</h5>
-      </div>
-
-      <div class="search-result-section">
-        <h5>Location</h5>
-      </div>
-
-      <div class="search-result-section">
-        <h5>Timezone</h5>
-        UTC <!-- add offset value dynamically using the API -->
-      </div>
-
-      <div class="search-result-section">
-        <h5>ISP</h5>
-      </div>
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
+          <path fill="none" stroke="#FFF" stroke-width="3" d="M2 1l6 6-6 6" />
+        </svg>
+      </button>
     </div>
-  </main>
-  
-  <footer>
-    <div class="attribution">
-      Coded by <a href="https://jayteepadilla.dev">Jaytee Padilla</a>.
-      Challenge by <a href="https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0" target="_blank">Frontend Mentor</a>. 
-    </div>
-  </footer>
-  
-  <script src="js/index.js"></script>
-</body>
+
+    <main>
+      <div class="search-results-container">
+        <div class="search-result-section">
+          <h5>IP Address</h5>
+        </div>
+
+        <div class="search-result-section">
+          <h5>Location</h5>
+        </div>
+
+        <div class="search-result-section">
+          <h5>Timezone</h5>
+          UTC
+          <!-- add offset value dynamically using the API -->
+        </div>
+
+        <div class="search-result-section">
+          <h5>ISP</h5>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Coded by <a href="https://jayteepadilla.dev">Jaytee Padilla</a>.
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0"
+          target="_blank"
+          >Frontend Mentor</a
+        >.
+      </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+  </body>
 </html>
