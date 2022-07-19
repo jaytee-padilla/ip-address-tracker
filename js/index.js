@@ -1,5 +1,6 @@
 // modules
 import 'dotenv/config';
+const states = require('us-state-converter');
 
 // HTML elements
 const ipAddressEl = document.getElementById('ip-address-input');
@@ -20,8 +21,15 @@ const handleFetchError = (res) => {
 }
 
 const renderGeolocation = (data) => {
+  let stateAbbreviation = states.abbr(data.location.region);
+
+  // Don't abbreviate regions outside of the US
+  if (stateAbbreviation === 'No abbreviation found with that state name') {
+    stateAbbreviation = data.location.region;
+  }
+
   ipResultEl.textContent = data.ip;
-  ipLocationResultEl.textContent = `${data.location.city}, ${data.location.region} ${data.location.postalCode}`;
+  ipLocationResultEl.textContent = `${data.location.city}, ${stateAbbreviation} ${data.location.postalCode}`;
   ipTimezoneResultEl.textContent = `UTC ${data.location.timezone}`;
   ipIspResultEl.textContent = data.isp;
 }
