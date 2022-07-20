@@ -1,6 +1,7 @@
 // modules
 import 'dotenv/config';
 const states = require('us-state-converter');
+import { map } from './map';
 
 // HTML elements
 const ipAddressEl = document.getElementById('ip-address-input');
@@ -12,6 +13,7 @@ const ipIspResultEl = document.querySelector('.ip-isp-result');
 
 // vars
 const ApiKey = process.env.API_KEY;
+let geolocationData = {};
 
 // functions
 const handleFetchError = (res) => {
@@ -21,20 +23,6 @@ const handleFetchError = (res) => {
   }
 };
 
-const renderGeolocation = (data) => {
-  let stateAbbreviation = states.abbr(data.location.region);
-
-  // Don't abbreviate regions outside of the US
-  if (stateAbbreviation === 'No abbreviation found with that state name') {
-    stateAbbreviation = data.location.region;
-  }
-
-  ipResultEl.textContent = data.ip;
-  ipLocationResultEl.textContent = `${data.location.city}, ${stateAbbreviation} ${data.location.postalCode}`;
-  ipTimezoneResultEl.textContent = `UTC ${data.location.timezone}`;
-  ipIspResultEl.textContent = data.isp;
-};
-
 const getGeolocation = async () => {
   const ipAddress = ipAddressEl.value;
 
@@ -42,7 +30,7 @@ const getGeolocation = async () => {
     throw new Error('Must enter an IP Address into the search field');
   }
 
-  const response = await fetch(
+  geolocationData = await fetch(
     `https://geo.ipify.org/api/v2/country,city?apiKey=${ApiKey}&ipAddress=${ipAddress}`
   ).then((res) => {
     handleFetchError(res);
@@ -50,8 +38,30 @@ const getGeolocation = async () => {
     const data = res.json();
     return data;
   });
-
-  renderGeolocation(response);
 };
 
-searchButtonEl.addEventListener('click', getGeolocation);
+const renderMapLocation = () => {
+  map.panTo(
+    new L.LatLng(geolocationData.location.lat, geolocationData.location.lng)
+  );
+};
+
+const renderGeolocation = async () => {
+  await getGeolocation();
+
+  let stateAbbreviation = states.abbr(geolocationData.location.region);
+
+  // Don't abbreviate regions outside of the US
+  if (stateAbbreviation === 'No abbreviation found with that state name') {
+    stateAbbreviation = geolocationData.location.region;
+  }
+
+  ipResultEl.textContent = geolocationData.ip;
+  ipLocationResultEl.textContent = `${geolocationData.location.city}, ${stateAbbreviation} ${geolocationData.location.postalCode}`;
+  ipTimezoneResultEl.textContent = `UTC ${geolocationData.location.timezone}`;
+  ipIspResultEl.textContent = geolocationData.isp;
+
+  renderMapLocation();
+};
+
+searchButtonEl.addEventListener('click', renderGeolocation);
