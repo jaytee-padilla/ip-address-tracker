@@ -6,6 +6,7 @@ import { map } from './map';
 // HTML elements
 const ipAddressEl = document.getElementById('ip-address-input');
 const searchButtonEl = document.querySelector('.search-btn');
+const searchBarEl = document.querySelector('.search-bar');
 const ipResultEl = document.querySelector('.ip-result');
 const ipLocationResultEl = document.querySelector('.ip-location-result');
 const ipTimezoneResultEl = document.querySelector('.ip-timezone-result');
@@ -46,7 +47,9 @@ const renderMapLocation = () => {
   );
 };
 
-const renderGeolocation = async () => {
+const renderGeolocation = async (event) => {
+  event.preventDefault();
+
   await getGeolocation();
 
   let stateAbbreviation = states.abbr(geolocationData.location.region);
@@ -64,4 +67,4 @@ const renderGeolocation = async () => {
   renderMapLocation();
 };
 
-searchButtonEl.addEventListener('click', renderGeolocation);
+searchBarEl.addEventListener('submit', renderGeolocation);
