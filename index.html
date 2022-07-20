@@ -29,45 +29,47 @@
   </head>
   <body>
     <div class="container">
-      <header>
-        <h1>IP Address Tracker</h1>
-      </header>
+      <div class="bg-banner">
+        <header>
+          <h1>IP Address Tracker</h1>
+        </header>
 
-      <div class="search-bar">
-        <input type="text" id="ip-address-input" placeholder="Search for any IP address or domain" value="67.180.242.147" />
+        <div class="search-bar">
+          <input type="text" id="ip-address-input" placeholder="Search for any IP address or domain" value="67.180.242.147" />
 
-        <button class="search-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
-            <path fill="none" stroke="#FFF" stroke-width="3" d="M2 1l6 6-6 6" />
-          </svg>
-        </button>
-      </div>
-
-      <main>
-        <div class="search-results-container">
-          <div class="search-result-section">
-            <h5>IP Address</h5>
-            <p class="ip-result"></p>
-          </div>
-
-          <div class="search-result-section">
-            <h5>Location</h5>
-            <p class="ip-location-result"></p>
-          </div>
-
-          <div class="search-result-section">
-            <h5>Timezone</h5>
-            <p class="ip-timezone-result"></p>
-            <!-- UTC -->
-            <!-- add offset value dynamically using the API -->
-          </div>
-
-          <div class="search-result-section">
-            <h5>ISP</h5>
-            <p class="ip-isp-result"></p>
-          </div>
+          <button class="search-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
+              <path fill="none" stroke="#FFF" stroke-width="3" d="M2 1l6 6-6 6" />
+            </svg>
+          </button>
         </div>
-      </main>
+
+        <main>
+          <div class="search-results-container">
+            <div class="search-result-section">
+              <h5>IP Address</h5>
+              <p class="ip-result"></p>
+            </div>
+
+            <div class="search-result-section">
+              <h5>Location</h5>
+              <p class="ip-location-result"></p>
+            </div>
+
+            <div class="search-result-section">
+              <h5>Timezone</h5>
+              <p class="ip-timezone-result"></p>
+              <!-- UTC -->
+              <!-- add offset value dynamically using the API -->
+            </div>
+
+            <div class="search-result-section">
+              <h5>ISP</h5>
+              <p class="ip-isp-result"></p>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
 
     <footer>
