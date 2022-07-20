@@ -13,12 +13,13 @@ const ipIspResultEl = document.querySelector('.ip-isp-result');
 // vars
 const ApiKey = process.env.API_KEY;
 
+// functions
 const handleFetchError = (res) => {
   if (!res.ok) {
-    const message = `An error has occurred: ${res.status} ${res.statusText}`
+    const message = `An error has occurred: ${res.status} ${res.statusText}`;
     throw new Error(message);
   }
-}
+};
 
 const renderGeolocation = (data) => {
   let stateAbbreviation = states.abbr(data.location.region);
@@ -32,7 +33,7 @@ const renderGeolocation = (data) => {
   ipLocationResultEl.textContent = `${data.location.city}, ${stateAbbreviation} ${data.location.postalCode}`;
   ipTimezoneResultEl.textContent = `UTC ${data.location.timezone}`;
   ipIspResultEl.textContent = data.isp;
-}
+};
 
 const getGeolocation = async () => {
   const ipAddress = ipAddressEl.value;
@@ -41,15 +42,16 @@ const getGeolocation = async () => {
     throw new Error('Must enter an IP Address into the search field');
   }
 
-  const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${ApiKey}&ipAddress=${ipAddress}`)
-    .then(res => {
-      handleFetchError(res);
+  const response = await fetch(
+    `https://geo.ipify.org/api/v2/country,city?apiKey=${ApiKey}&ipAddress=${ipAddress}`
+  ).then((res) => {
+    handleFetchError(res);
 
-      const data = res.json()
-      return data;
-    });
+    const data = res.json();
+    return data;
+  });
 
   renderGeolocation(response);
-}
+};
 
 searchButtonEl.addEventListener('click', getGeolocation);
