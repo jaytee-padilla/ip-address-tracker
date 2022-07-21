@@ -1,7 +1,7 @@
 // modules
 import 'dotenv/config';
 const states = require('us-state-converter');
-import { map } from './map';
+import { map, marker } from './map';
 
 // HTML elements
 const ipAddressEl = document.getElementById('ip-address-input');
@@ -45,6 +45,11 @@ const renderMapLocation = () => {
   map.panTo(
     new L.LatLng(geolocationData.location.lat, geolocationData.location.lng)
   );
+
+  marker.setLatLng([
+    geolocationData.location.lat,
+    geolocationData.location.lng,
+  ]);
 };
 
 const renderGeolocation = async (event) => {
