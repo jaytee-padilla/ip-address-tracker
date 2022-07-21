@@ -85,6 +85,9 @@ body {
   <img src='./images/correct-bg-image-technique.gif' height='350px' />
 </p>
 
+- Combining multiple javascript files into one file (with the help of a bundler) is more efficient than using multiple `<script>` tags. The server is pinged each time per script tag, so less script tags = less calls to server 👍
+
+- 
 To see how you can add code snippets, see below:
 
 ```html

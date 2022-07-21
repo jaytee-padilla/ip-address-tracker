@@ -5,7 +5,6 @@ import { map, marker } from './map';
 
 // HTML elements
 const ipAddressEl = document.getElementById('ip-address-input');
-const searchButtonEl = document.querySelector('.search-btn');
 const searchBarEl = document.querySelector('.search-bar');
 const ipResultEl = document.querySelector('.ip-result');
 const ipLocationResultEl = document.querySelector('.ip-location-result');
