@@ -23,10 +23,18 @@ const handleFetchError = (res) => {
   }
 };
 
+const handleInvalidQuery = () => {
+  ipResultEl.textContent = 'Please enter a valid IP address';
+  ipLocationResultEl.textContent = '';
+  ipTimezoneResultEl.textContent = '';
+  ipIspResultEl.textContent = '';
+}
+
 const getGeolocation = async () => {
   const ipAddress = ipAddressEl.value;
 
   if (!ipAddress) {
+    handleInvalidQuery();
     throw new Error('Must enter an IP Address into the search field');
   }
 
@@ -57,6 +65,12 @@ const renderGeolocation = async (event) => {
   await getGeolocation();
 
   let stateAbbreviation = states.abbr(geolocationData.location.region);
+
+  if (stateAbbreviation === 'Please pass a full state name as your argument') {
+    handleInvalidQuery();
+
+    throw new Error('Must enter a valid IP Address into the search field');
+  }
 
   // Don't abbreviate regions outside of the US
   if (stateAbbreviation === 'No abbreviation found with that state name') {
