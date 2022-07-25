@@ -7,6 +7,12 @@ body {
       background-repeat: no-repeat;
       background-size: cover;
       height: 35vh;
+
+      header {
+        h1 {
+          color: white;
+        }
+      }
     }
 
     #map {
