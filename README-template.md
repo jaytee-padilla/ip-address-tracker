@@ -89,6 +89,40 @@ body {
 
 - A `placeholder` attribute should not be used as an alternative to a label. The placeholder is a short hint intended to aid the user with data entry so it should not be identical to the label element. The placeholder may not be available to assistive technology and thus may not be relied upon to convey an accessible name or description -- it acts similar to fallback content
 
+- How to get the main content of the app to hover above the background banner image and map. [This article](https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/) gave a few solutions as well as explanations on the differences between each solution.
+  - The key was giving `.container` a position of relative to make the `z-index` properties work & `main` a `position: absolute` property to remove it from the block-level flow of page elements
+```scss
+.container {
+    position: relative;
+
+    .bg-banner {
+      background-image: url('/images/pattern-bg.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 291px; // height of <main> content - height of search-results-container
+    }
+
+    main {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      text-align: center;
+      z-index: 100;
+
+      header {
+        margin: 20px 0 20px 0;
+
+        h2 {
+          color: white;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+```
+
 
 To see how you can add code snippets, see below:
 
