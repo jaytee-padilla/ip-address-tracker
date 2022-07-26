@@ -10,7 +10,7 @@ body {
       background-image: url('/images/pattern-bg.png');
       background-repeat: no-repeat;
       background-size: cover;
-      height: 35vh;
+      height: 291px; // height of <main> content - height of search-results-container
     }
 
     main {
@@ -34,7 +34,7 @@ body {
   }
 
   #map {
-    height: 65vh;
+    height: 100vh;
     z-index: 1;
   }
 }
