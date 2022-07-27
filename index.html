@@ -22,17 +22,19 @@
   </head>
   <body>
     <div class="container">
-      <div class="bg-banner">
+      <div class="bg-banner"></div>
+
+      <main>
         <header>
-          <h1>IP Address Tracker</h1>
+          <h2>IP Address Tracker</h2>
         </header>
 
         <form class="search-bar" type="submit">
           <input
             type="text"
             id="ip-address-input"
-            placeholder="Search for any IP address or domain"
-            value="67.180.242.147"
+            placeholder="Enter an IP Address"
+            aria-label="Enter an IP Address"
           />
 
           <button class="search-btn">
@@ -47,30 +49,28 @@
           </button>
         </form>
 
-        <main>
-          <div class="search-results-container">
-            <div class="search-result-section">
-              <h5>IP Address</h5>
-              <p class="ip-result"></p>
-            </div>
-
-            <div class="search-result-section">
-              <h5>Location</h5>
-              <p class="ip-location-result"></p>
-            </div>
-
-            <div class="search-result-section">
-              <h5>Timezone</h5>
-              <p class="ip-timezone-result"></p>
-            </div>
-
-            <div class="search-result-section">
-              <h5>ISP</h5>
-              <p class="ip-isp-result"></p>
-            </div>
+        <div class="search-results-container">
+          <div class="search-result-section">
+            <h5>IP Address</h5>
+            <p class="ip-result"></p>
           </div>
-        </main>
-      </div>
+
+          <div class="search-result-section">
+            <h5>Location</h5>
+            <p class="ip-location-result"></p>
+          </div>
+
+          <div class="search-result-section">
+            <h5>Timezone</h5>
+            <p class="ip-timezone-result"></p>
+          </div>
+
+          <div class="search-result-section">
+            <h5>ISP</h5>
+            <p class="ip-isp-result"></p>
+          </div>
+        </div>
+      </main>
 
       <div id="map"></div>
     </div>

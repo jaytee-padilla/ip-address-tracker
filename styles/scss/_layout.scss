@@ -1,16 +1,40 @@
+@use 'base';
+
 body {
   font-family: 'Rubik', sans-serif;
 
   .container {
+    position: relative;
+
     .bg-banner {
       background-image: url('/images/pattern-bg.png');
       background-repeat: no-repeat;
       background-size: cover;
-      height: 35vh;
+      height: 291px; // height of <main> content - height of search-results-container
     }
 
-    #map {
-      height: 65vh;
+    main {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      text-align: center;
+      z-index: 100;
+
+      header {
+        margin: 20px 0 20px 0;
+
+        h2 {
+          color: white;
+          font-weight: 500;
+        }
+      }
     }
+  }
+
+  #map {
+    height: 100vh;
+    z-index: 1;
   }
 }
