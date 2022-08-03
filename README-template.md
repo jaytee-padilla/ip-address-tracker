@@ -122,20 +122,16 @@ body {
     }
   }
 ```
+- Making use of `@use` in my SCSS. `@import` will slowly be phased out by the team behind SASS. 
+e.g.
+```scss
+@use '../base';
 
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+@media screen and (min-width: base.$desktop-breakpoint) {
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 85%;
+      height: 175px;
+    }
 ```
