@@ -2,9 +2,10 @@
 
 - [Overview](#overview)
   - [Skills](#skills)
+  - [The Challenge](#the-challenge)
+  - [Note](#note)
   - [Links](#links)
   - [Author](#author)
-  - [The Challenge](#the-challenge)
 - [Screenshot](#screenshot)
 - [What I learned](#what-i-learned)
 
@@ -24,6 +25,19 @@
   - [LeafletJS](https://leafletjs.com/)
 - Netlify for deployment
 
+### The Challenge
+
+Users should be able to:
+
+- See their own IP address on the map on the initial page load
+- Search for any IP addresses or domains and see the key information and location
+- View the optimal layout for each page depending on their device's screen size
+- See hover states for all interactive elements on the page
+
+### Note
+- IMPORTANT NOTE 1: The free tier of the IP Geolocation API is limited to 1000 credits (a.k.a requests). If the API is no longer loading content properly, it's more than likely because the free credits have run dry
+- IMPORTANT NOTE 2: Make sure adblock is turned off when using the site. It will prevent the API from working
+
 ### Links
 
 - Solution URL: [https://github.com/jaytee-padilla/ip-address-tracker](https://github.com/jaytee-padilla/ip-address-tracker)
@@ -32,16 +46,6 @@
 ### Author
 
 - Website - [Jaytee Padilla](https://jayteepadilla.dev/)
-
-### The Challenge
-
-Users should be able to:
-
-- IMPORTANT NOTE: The free tier of the IP Geolocation API is limited to 1000 credits (a.k.a requests). If the API is no longer loading content properly, it's more than likely because the free credits have run dry
-- See their own IP address on the map on the initial page load
-- Search for any IP addresses or domains and see the key information and location
-- View the optimal layout for each page depending on their device's screen size
-- See hover states for all interactive elements on the page
 
 ### Screenshot
 
