@@ -10,9 +10,12 @@ body {
       background-image: url('/images/pattern-bg.png');
       background-repeat: no-repeat;
       background-size: cover;
-      height: 291px; // height of <main> content minus the height of search-results-container
-    }
+      height: 291px; // height of <main> content minus half the height of search-results-container
 
+      @media screen and (min-width: base.$desktop-breakpoint) {
+        height: 273.5px;
+      }  
+    }
     main {
       position: absolute;
       top: 0;

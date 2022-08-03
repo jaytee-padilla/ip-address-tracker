@@ -13,11 +13,35 @@ main {
     background-color: white;
     border-radius: 10px;
 
+    @media screen and (min-width: base.$desktop-breakpoint) {
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 85%;
+      height: 175px;
+    }
+
     .search-result-section {
       height: 71px;
 
       &:not(:last-child) {
         margin-bottom: 15px;
+
+        @media screen and (min-width: base.$desktop-breakpoint) {
+          margin-bottom: 0;
+        }
+      }
+
+      @media screen and (min-width: base.$desktop-breakpoint) {
+        // border: 1px solid purple;
+        border-left: 2px solid lightgray;
+        text-align: left;
+        padding-left: 25px;
+        padding-right: 25px;
+
+        &:first-child {
+          border-left: none;
+        }
       }
 
       h5 {
@@ -25,13 +49,17 @@ main {
         font-size: 10px;
         font-weight: 700;
         letter-spacing: 0.1em;
-        margin-bottom: 2px;
+        margin-bottom: 4px;
         color: base.$dark-gray;
       }
 
       p {
         font-weight: 500;
         font-size: base.$text-input-font-size;
+
+        @media screen and (min-width: base.$desktop-breakpoint) {
+          
+        }
       }
     }
   }
