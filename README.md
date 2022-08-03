@@ -45,7 +45,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+<p align='center'>
+  <img src='./images/final-mobile.gif' height='550px' />
+</p>
+
+<p align='center'>
+  <img src='./images/final-desktop.gif' height='550px' />
+</p>
 
 ## What I Learned
 
@@ -135,3 +141,8 @@ e.g.
       height: 175px;
     }
 ```
+
+- How to implement environment variables on Netlify's platform
+<p align='center'>
+  <img src='./images/netlify-envs.png' width="1000px" />
+</p>
