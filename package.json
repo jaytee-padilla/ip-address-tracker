@@ -2,7 +2,7 @@
   "name": "ip-address-tracker-master",
   "version": "1.0.0",
   "description": "![Design preview for the IP address tracker coding challenge](./design/desktop-preview.jpg)",
-  "main": "index.js",
+  "source": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch-sass": "sass --no-source-map -w styles/scss/main.scss styles/css/main.css",
