@@ -1,7 +1,13 @@
+@use '../base';
+
 .search-bar {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+
+  @media screen and (min-width: base.$desktop-breakpoint) {
+    margin-bottom: 60px;
+  }
 
   input {
     padding-left: 20px;
@@ -12,6 +18,10 @@
 
     &:focus {
       outline: none;
+    }
+
+    @media screen and (min-width: base.$desktop-breakpoint) {
+      width: 35%;
     }
   }
 
