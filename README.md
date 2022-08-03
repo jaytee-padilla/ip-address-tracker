@@ -50,11 +50,11 @@ Users should be able to:
 ### Screenshot
 
 <p align='center'>
-  <img src='./images/final-mobile.gif' height='550px' />
+  <img src='./images/final-mobile.gif' />
 </p>
 
 <p align='center'>
-  <img src='./images/final-desktop.gif' height='550px' />
+  <img src='./images/final-desktop.gif' />
 </p>
 
 ## What I Learned
@@ -73,7 +73,7 @@ body {
 }
 ```
 <p align='center'>
-  <img src='./images/incorrect-bg-image-technique.png' height='350px' />
+  <img src='./images/incorrect-bg-image-technique.png' />
 </p>
 
 - Adding a `div` around the main content of the page and applying a `background-image` property to that helped ensure a consistent size that's also responsive
@@ -92,7 +92,7 @@ body {
 }
 ```
 <p align='center'>
-  <img src='./images/correct-bg-image-technique.gif' height='350px' />
+  <img src='./images/correct-bg-image-technique.gif' />
 </p>
 
 - Combining multiple javascript files into one file (with the help of a bundler) is more efficient than using multiple `<script>` tags. The server is pinged each time per script tag, so less script tags = less calls to server 👍
@@ -148,5 +148,5 @@ e.g.
 
 - How to implement environment variables on Netlify's platform
 <p align='center'>
-  <img src='./images/netlify-envs.png' width="1000px" />
+  <img src='./images/netlify-envs.png' />
 </p>
