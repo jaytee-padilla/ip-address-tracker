@@ -26,8 +26,8 @@
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/jaytee-padilla/ip-address-tracker](https://github.com/jaytee-padilla/ip-address-tracker)
+- Live Site URL: [https://jaytee-ip-address-tracker.netlify.app/](https://jaytee-ip-address-tracker.netlify.app/)
 
 ### Author
 
